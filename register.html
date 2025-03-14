@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAJxB0I30uYtizWZer6nO781X88EsT2xAU",
+            authDomain: "poppi-soda.firebaseapp.com",
+            projectId: "poppi-soda",
+            storageBucket: "poppi-soda.firebasestorage.app",
+            messagingSenderId: "1029647897918",
+            appId: "1:1029647897918:web:7d183374d354b532cd086f",
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Register user
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("register-form").addEventListener("submit", async (e) => {
+                e.preventDefault();
+                
+                const email = document.getElementById("email-signup").value;
+                const password = document.getElementById("password-signup").value;
+                const confirmPassword = document.getElementById("confirm-password-signup").value;
+                const statusMessage = document.getElementById("status-message"); // Status message element
+
+                // Reset previous messages
+                statusMessage.textContent = "";
+                statusMessage.style.display = "none";
+
+                // Check if passwords match
+                if (password !== confirmPassword) {
+                    statusMessage.textContent = "⚠️ Passwords do not match!";
+                    statusMessage.style.color = "red";
+                    statusMessage.style.display = "block";
+                    return;
+                }
+
+                try {
+                    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                    statusMessage.textContent = "✅ Account created successfully! Redirecting...";
+                    statusMessage.style.color = "yellow";
+                    statusMessage.style.display = "block";
+
+                    // Delay redirect for better UX
+                    setTimeout(() => {
+                        window.location.href = "login.html"; // Redirect to login page
+                    }, 2000);
+                } catch (error) {
+                    statusMessage.textContent = "❌ Error: " + error.message;
+                    statusMessage.style.color = "red";
+                    statusMessage.style.display = "block";
+                }
+            });
+        });
+    </script>
+    <style>
+        body {
+            background: url('assets/img/login_bg.png') no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ED1D8A;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #7E3C97;
+        }
+        p {
+            margin-top: 10px;
+            color: #fff;
+        }
+        a {
+            color: #FDEE0C;
+            text-decoration: none;
+        }
+        #status-message {
+            display: none;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container create-acct">
+        <h2>Register</h2>
+        <form id="register-form">
+            <input type="email" id="email-signup" placeholder="Email" required>
+            <input type="password" id="password-signup" placeholder="Password" required>
+            <input type="password" id="confirm-password-signup" placeholder="Confirm Password" required>
+            <button type="submit" id="create-acct-btn">Sign Up</button>
+            <p id="status-message"></p> <!-- This will display success/error messages -->
+        </form>
+        <p style="color: #01C0F7;">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+</body>
+</html>
