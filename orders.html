@@ -151,14 +151,14 @@
       <div class="th-menu-area text-center">
         <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
-          <a href="index.html"
+          <a href="home.html"
             ><img src="assets/img/logobg.png" alt="Frutin"
           /></a>
         </div>
         <div class="th-mobile-menu">
           <ul>
             <li class="menu-item">
-              <a href="index.html">Home</a>
+              <a href="home.html">Home</a>
               
             </li>
             <li><a href="about.html">About Us</a></li>
@@ -169,7 +169,6 @@
                 <li><a href="shop.html">Shop</a></li>
                   <li><a href="cart.html">Cart Page</a></li>
                   <li><a href="checkout.html">Checkout</a></li>
-                  
                   <li><a href="orders.html">Orders</a></li>
               </ul>
             </li>
@@ -193,14 +192,14 @@
       <div class="th-menu-area text-center">
         <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
-          <a href="index.html"
+          <a href="home.html"
             ><img src="assets/img/logobg.png" alt="Frutin"
           /></a>
         </div>
         <div class="th-mobile-menu">
           <ul>
             <li class="menu-item">
-              <a href="index.html">Home</a>
+              <a href="home.html">Home</a>
               
             </li>
             <li><a href="about.html">About Us</a></li>
@@ -224,51 +223,7 @@
 
   
  <!-- ------------HEADER----------------->
-    <header class="th-header header-layout1">
-      <div class="header-top">
-        <div class="container">
-          <div
-            class="row justify-content-center justify-content-lg-between align-items-center gy-2"
-          >
-            <div class="col-auto d-none d-lg-block">
-              <p class="header-notice">
-                Orders of ₱599 or more qualify for free shipping!
-              </p>
-            </div>
-            <div class="col-auto">
-              <div class="header-links">
-                <ul>
-                  <li class="d-none d-sm-inline-block">
-                    <i class="fal fa-location-dot"></i
-                    ><a href="https://www.google.com/maps"
-                      >P. Paredes St., Sampaloc, Manila</a
-                    >
-                  </li>
-                  <li>
-                    <div class="social-links">
-                      <a href="https://www.facebook.com/"
-                        ><i class="fab fa-facebook-f"></i
-                      ></a>
-                      <a href="https://www.twitter.com/"
-                        ><i class="fab fa-twitter"></i
-                      ></a>
-                      <a href="https://www.linkedin.com/"
-                        ><i class="fab fa-linkedin-in"></i
-                      ></a>
-                      <a href="https://www.instagram.com/"
-                        ><i class="fab fa-instagram"></i
-                      ></a>
-                      <a href="https://www.youtube.com/"
-                        ><i class="fab fa-youtube"></i
-                      ></a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  
       <header class="th-header header-layout2">
         <div class="sticky-wrapper">
           <div class="container">
@@ -320,7 +275,7 @@
                 <div class="row align-items-center justify-content-between">
                   <div class="col-auto">
                     <div class="header-logo">
-                      <a href="index.html"
+                      <a href="home.html"
                         ><img src="assets/img/poppi_logo.png" alt="Frutin"
                       /></a>
                     </div>
@@ -329,7 +284,7 @@
                     <nav class="main-menu d-none d-lg-inline-block">
                       <ul>
                         <li class="menu-item">
-                          <a href="index.html">Home</a>
+                          <a href="home.html">Home</a>
                           
                         </li>
                         <li><a href="about.html">About Us</a></li>
@@ -340,8 +295,7 @@
                             <li><a href="shop.html">Shop</a></li>
                               <li><a href="cart.html">Cart Page</a></li>
                               <li><a href="checkout.html">Checkout</a></li>
-                              
-                  <li><a href="orders.html">Orders</a></li>
+                              <li><a href="orders.html">Orders</a></li>
                              
                           </ul>
                         </li>
@@ -399,38 +353,35 @@
      <!-- END HEADER -->
 
 <!-- START CART -->
-<!-- Start Order Details -->
-<h4>Your Order Details</h4>
-<table class="order_table">
-  <thead>
-    <tr>
-      <th>Product Image</th>
-      <th>Product Name</th>
-      <th>Price</th>
-      <th>Quantity</th>
-      <th>Total</th>
-    </tr>
-  </thead>
-  <tbody id="order-items">
-    <!-- Order items will be injected here by JavaScript -->
-  </tbody>
-</table>
-
-<h4>Billing Details</h4>
-<p id="billing-details"></p>
-
-<h4>Payment Method</h4>
-<p id="payment-method"></p>
-
-<h4>Order Status</h4>
-<div>
-  <label>
-    <input type="radio" name="order-status" value="Received" /> Received
-  </label>
-  <label>
-    <input type="radio" name="order-status" value="Not Received" checked /> Not Received
-  </label>
+<div class="space">
+  <div class="container">
+    <div class="tinv-wishlist woocommerce">
+      <div class="tinv-header"><h2 class="mb-30">Orders</h2></div>
+      <form autocomplete="off">
+        <table class="tinvwl-table-manage-list">
+          <thead>
+            <tr>
+              <th class="order-no">Order No.</th>
+              <th class="product-thumbnail">&nbsp;</th>
+              <th class="product-name">Product Name</th>
+              <th class="product-price">Unit Price</th>
+              <th class="product-quantity">Quantity</th>
+              <th class="product-stock">Unit Total</th>
+              <th class="product-total">Mode of Payment</th>
+              <th class="delivery-status">Delivery Status</th>
+            </tr>
+          </thead>
+          <tbody id="order-table-body">
+            <!-- Dynamic cart items will be inserted here -->
+          </tbody>
+        </table>
+      </form>
+    </div>
+  
+  </div>
 </div>
+<!-- END CART -->
+
     <!-- END CART -->
 
  <!-- FOOTER -->
@@ -470,7 +421,7 @@
               <div class="widget footer-widget">
                 <div class="th-widget-about">
                   <div class="about-logo">
-                    <a href="index.html"
+                    <a href="home.html"
                       ><img src="assets/img/logoo.png" alt="Frutin"
                     /></a>
                   </div>
@@ -611,7 +562,7 @@
             <div class="col-md-6">
               <p class="copyright-text">
                 <i class=""></i> 
-                <a href="index.html"></a>Final Project | E-Commerce with Digital Marketing | Babygirls  
+                <a href="home.html"></a>Final Project | E-Commerce with Digital Marketing | Babygirls  
               </p>
             </div>
             <div class="col-md-6 text-center text-md-end">
@@ -641,53 +592,18 @@
         ></path>
       </svg>
     </div>
+    <script type = "module" src = "assets\js\script.js"></script>
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets/js/app.min.js"></script>
-    <script src="assets\js\cart.js"></script>
     <script src="assets/js/main.js"></script>
-    <script type = "module" src = "assets\js\script.js"></script>
-    <script>
-        // Load the order details from localStorage
-        const orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
-      
-        if (orderDetails) {
-          // Display the cart items
-          const orderItemsTable = document.getElementById('order-items');
-          orderDetails.cartItems.forEach(item => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-              <td><img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px;" /></td>
-              <td>${item.name}</td>
-              <td>${item.price}</td>
-              <td>${item.quantity}</td>
-              <td>${item.total}</td>
-            `;
-            orderItemsTable.appendChild(row);
-          });
-      
-          // Display the billing details
-          const billingDetails = document.getElementById('billing-details');
-          billingDetails.innerHTML = `
-            <strong>Name:</strong> ${orderDetails.billingData.firstName} ${orderDetails.billingData.lastName}<br />
-            <strong>Company:</strong> ${orderDetails.billingData.company}<br />
-            <strong>Address:</strong> ${orderDetails.billingData.street}, ${orderDetails.billingData.apartment}, ${orderDetails.billingData.city}, ${orderDetails.billingData.state}, ${orderDetails.billingData.postcode}<br />
-            <strong>Email:</strong> ${orderDetails.billingData.email}<br />
-            <strong>Phone:</strong> ${orderDetails.billingData.phone}<br />
-          `;
-      
-          // Display the payment method
-          const paymentMethod = document.getElementById('payment-method');
-          paymentMethod.innerHTML = orderDetails.paymentMethod === 'cod' ? 'Cash on Delivery' : 'PayPal';
-        } else {
-          alert('No order details found.');
-        }
-      </script>
-      
-  <script src="assets\js\cart.js"></script>
-  <script type="module" src="assets\js\firebaseConfig.js"></script>
-  <script type="module" src="assets\js\auth.js"></script>
-  <script type="module" src="assets\js\cart2.js"></script>
-  <script type="module" src="assets\js\orders.js"></script>
+    <script src="assets/js/.js"></script>
+    
+    <script type="module" src="assets\js\firebaseConfig.js"></script>
+    <script type="module" src="assets\js\auth.js"></script>
+    <script type="module" src="assets\js\orders.js"></script>
 
+    <script type="module" src="assets\js\cart.js"></script>
+    <script type="module" src="assets\js\checkout.js"></script>
+  
   </body>
 </html>
