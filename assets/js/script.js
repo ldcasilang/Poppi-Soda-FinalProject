@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const user = userCredential.user;
                     localStorage.setItem("userEmail", user.email); // Store email in localStorage
                     alert("Success! Welcome back!");
-                    window.location.href = "home.html"; // Redirect after login
+                    window.location.href = "index.html"; // Redirect after login
                 })
                 .catch((error) => {
                     console.error("Login failed:", error);
