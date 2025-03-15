@@ -1,48 +1,43 @@
-import { db, auth } from "./firebase-config.js";
-import { collection, addDoc, query, where, getDocs, setDoc, doc } 
-from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+document.addEventListener("DOMContentLoaded", function () {
+    let orderDetails = JSON.parse(localStorage.getItem("orderDetails")) || { cart: [] };
 
-// Place Order
-async function placeOrder() {
-    const user = auth.currentUser;
-    if (!user) {
-        alert("You must be logged in to place an order.");
+    if (!orderDetails.cart.length) {
+        console.log("No order details found.");
         return;
     }
 
-    const userCartRef = doc(db, "carts", user.uid);
-    const cartSnap = await getDoc(userCartRef);
-    if (!cartSnap.exists() || cartSnap.data().items.length === 0) {
-        alert("Your cart is empty!");
-        return;
-    }
+    let orderTableBody = document.getElementById("order-table-body");
 
-    const orderRef = collection(db, "orders");
-    await addDoc(orderRef, {
-        userId: user.uid,
-        items: cartSnap.data().items,
-        timestamp: new Date()
+    orderDetails.cart.forEach((item, index) => {
+        let row = document.createElement("tr");
+        let total = item.price * item.quantity;
+        let isReceived = item.received || false; // Check if item is already marked as received
+
+        row.innerHTML = `
+            <td>#${index + 1}</td>
+            <td><img src="${item.image}" alt="Product Image" width="50"></td>
+            <td>${item.name}</td>
+            <td>₱${Number(item.price).toFixed(2)}</td>
+            <td>${item.quantity}</td>
+            <td>₱${total.toFixed(2)}</td>
+            <td>${orderDetails.paymentMethod}</td>
+            <td>
+                <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                    <input type="checkbox" name="orderReceived" data-index="${index}" ${isReceived ? "checked" : ""}>
+                    <span>Order Received</span>
+                </label>
+            </td>
+        `;
+
+        orderTableBody.appendChild(row);
     });
 
-    await setDoc(userCartRef, { items: [] }); // Clear cart after checkout
-    alert("Order placed successfully!");
-}
-
-// Get user orders
-async function getUserOrders() {
-    const user = auth.currentUser;
-    if (!user) return [];
-
-    const ordersRef = collection(db, "orders");
-    const q = query(ordersRef, where("userId", "==", user.uid));
-    const querySnapshot = await getDocs(q);
-
-    let orders = [];
-    querySnapshot.forEach((doc) => {
-        orders.push(doc.data());
+    // Add event listener for checkboxes to update localStorage
+    document.querySelectorAll('input[name="orderReceived"]').forEach(checkbox => {
+        checkbox.addEventListener("change", function () {
+            let idx = this.getAttribute("data-index");
+            orderDetails.cart[idx].received = this.checked; // Update the status
+            localStorage.setItem("orderDetails", JSON.stringify(orderDetails)); // Save back to localStorage
+        });
     });
-
-    return orders;
-}
-
-export { placeOrder, getUserOrders };
+});
