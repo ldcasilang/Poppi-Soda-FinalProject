@@ -220,51 +220,7 @@
 
   
  <!-- ------------HEADER----------------->
-    <header class="th-header header-layout1">
-      <div class="header-top">
-        <div class="container">
-          <div
-            class="row justify-content-center justify-content-lg-between align-items-center gy-2"
-          >
-            <div class="col-auto d-none d-lg-block">
-              <p class="header-notice">
-                Orders of ₱599 or more qualify for free shipping!
-              </p>
-            </div>
-            <div class="col-auto">
-              <div class="header-links">
-                <ul>
-                  <li class="d-none d-sm-inline-block">
-                    <i class="fal fa-location-dot"></i
-                    ><a href="https://www.google.com/maps"
-                      >P. Paredes St., Sampaloc, Manila</a
-                    >
-                  </li>
-                  <li>
-                    <div class="social-links">
-                      <a href="https://www.facebook.com/"
-                        ><i class="fab fa-facebook-f"></i
-                      ></a>
-                      <a href="https://www.twitter.com/"
-                        ><i class="fab fa-twitter"></i
-                      ></a>
-                      <a href="https://www.linkedin.com/"
-                        ><i class="fab fa-linkedin-in"></i
-                      ></a>
-                      <a href="https://www.instagram.com/"
-                        ><i class="fab fa-instagram"></i
-                      ></a>
-                      <a href="https://www.youtube.com/"
-                        ><i class="fab fa-youtube"></i
-                      ></a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+ 
       <header class="th-header header-layout2">
         <div class="sticky-wrapper">
           <div class="container">
@@ -400,22 +356,22 @@
       <h2 class="h4">Billing Details</h2>
       <div class="row">
         <div class="col-12 form-group">
-          <select class="form-select" name="billing_country">
-            <option>Philippines (PH)</option>
-            <option>United State (US)</option>
-            <option>Equatorial Guinea (GQ)</option>
-            <option>Australia (AU)</option>
-            <option>Germany (DE)</option>
+          <select class="form-select"id="billing_country" name="billing_country">
+            <option value="Philippines">Philippines (PH)</option>
+            <option value="USA">United State (US)</option>
+            <option value="GQ">Equatorial Guinea (GQ)</option>
+            <option value="Australia">Australia (AU)</option>
+            <option value="Germany">Germany (DE)</option>
           </select>
         </div>
         <div class="col-md-6 form-group">
-          <input type="text" class="form-control" name="billing_first_name" placeholder="First Name" />
+          <input type="text" class="form-control" name="billing_first_name"  id="billing_first_name" placeholder="First Name" />
         </div>
         <div class="col-md-6 form-group">
-          <input type="text" class="form-control" name="billing_last_name" placeholder="Last Name" />
+          <input type="text" class="form-control" name="billing_last_name" id="billing_last_name" placeholder="Last Name" />
         </div>
         <div class="col-12 form-group">
-          <input type="text" class="form-control" name="billing_company" placeholder="Your Company Name" />
+          <input type="text" class="form-control" name="billing_company"   placeholder="Your Company Name" />
         </div>
         <div class="col-12 form-group">
           <input type="text" class="form-control" name="billing_street" placeholder="Street Address" />
@@ -431,8 +387,8 @@
           <input type="text" class="form-control" name="billing_postcode" placeholder="Postcode / Zip" />
         </div>
         <div class="col-12 form-group">
-          <input type="text" class="form-control" name="billing_email" placeholder="Email Address" />
-          <input type="text" class="form-control" name="billing_phone" placeholder="Phone number" />
+          <input type="text" class="form-control" name="billing_email" id="billing_email" placeholder="Email Address" />
+          <input type="text" class="form-control" name="billing_phone" id="billing_phone" placeholder="Phone number" />
         </div>
       </div>
     </div>
@@ -446,19 +402,19 @@
       <div class="shipping_address">
         <div class="row">
           <div class="col-12 form-group">
-            <select class="form-select" name="shipping_country">
-              <option>Philippines (PH)</option>
-              <option>United State (US)</option>
-              <option>Equatorial Guinea (GQ)</option>
-              <option>Australia (AU)</option>
-              <option>Germany (DE)</option>
+            <select class="form-select" id="billing_country" name="shipping_country">
+              <option value="Philippines">Philippines (PH)</option>
+              <option value="USA">United State (US)</option>
+              <option value="GQ">Equatorial Guinea (GQ)</option>
+              <option value="Australia">Australia (AU)</option>
+              <option value="Germany">Germany (DE)</option>
             </select>
           </div>
           <div class="col-md-6 form-group">
-            <input type="text" class="form-control" name="shipping_first_name" placeholder="First Name" />
+            <input type="text" class="form-control" name="shipping_first_name" id="billing_first_name"placeholder="First Name" />
           </div>
           <div class="col-md-6 form-group">
-            <input type="text" class="form-control" name="shipping_last_name" placeholder="Last Name" />
+            <input type="text" class="form-control" name="shipping_last_name" id="billing_last_name"  placeholder="Last Name" />
           </div>
           <div class="col-12 form-group">
             <input type="text" class="form-control" name="shipping_company" placeholder="Your Company Name" />
@@ -477,8 +433,8 @@
             <input type="text" class="form-control" name="shipping_postcode" placeholder="Postcode / Zip" />
           </div>
           <div class="col-12 form-group">
-            <input type="text" class="form-control" name="shipping_email" placeholder="Email Address" />
-            <input type="text" class="form-control" name="shipping_phone" placeholder="Phone number" />
+            <input type="text" class="form-control" name="shipping_email"  id="billing_email" placeholder="Email Address" />
+            <input type="text" class="form-control" name="shipping_phone"  id="billing_phone" placeholder="Phone number" />
           </div>
         </div>
       </div>
@@ -546,12 +502,12 @@
               <!-- Cash on Delivery (Default) -->
               <li class="wc_payment_method payment_method_cod">
                 <input
-                  id="payment_method_cod"
+                  id="payment_cod"
                   type="radio"
                   class="input-radio"
                   name="payment_method"
-                  value="cod"
-                  checked="checked"
+                  value="Cash on Delivery"
+                  checked="checked" 
                 />
                 <label for="payment_method_cod">Cash on Delivery</label>
                 <div class="payment_box payment_method_cod">
@@ -562,24 +518,57 @@
               <!-- PayPal Payment (Appears on Click) -->
               <li class="wc_payment_method payment_method_paypal">
                 <input
-                  id="payment_method_paypal"
+                  id="payment_paypal"
                   type="radio"
                   class="input-radio"
                   name="payment_method"
-                  value="paypal"
+                  value="Paypal"
                 />
                 <label for="payment_method_paypal">PayPal</label>
                 <div class="payment_box payment_method_paypal" style="display: none;">
                   <p>
                     Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.
                   </p>
-                  <a href="#" id="paypal-link" class="paypal-button">Proceed to PayPal Payment</a>
+                  <a href="https://www.paypal.com/ph/home"   target="_blank" id="paypal-link" class="paypal-button">Proceed to PayPal Payment</a>
                 </div>
               </li>
+        
+              <!-- GCash Payment (Appears on Click) -->
+              <li class="wc_payment_method payment_method_gcash">
+                <input
+                  id="payment_gcash"
+                  type="radio"
+                  class="input-radio"
+                  name="payment_method"
+                  value="GCash"
+                />
+                <label for="payment_method_gcash">GCash</label>
+                <div class="payment_box payment_method_gcash" style="display: none;">
+                  <p>Pay securely via GCash. You will be redirected to the GCash app for payment.</p>
+                  <a href="https://www.gcash.com/" id="gcash-link"  target="_blank" class="gcash-button">Proceed to GCash Payment</a>
+                </div>
+              </li>
+        
+              <!-- Maya Payment (Appears on Click) -->
+              <li class="wc_payment_method payment_method_maya">
+                <input
+                  id="payment_maya"
+                  type="radio"
+                  class="input-radio"
+                  name="payment_method"
+                  value="Maya"
+                />
+                <label for="payment_method_maya">Maya</label>
+                <div class="payment_box payment_method_maya" style="display: none;">
+                  <p>Pay securely via Maya. You will be redirected to the Maya app for payment.</p>
+                  <a href="https://www.maya.ph/" id="maya-link"  target="_blank" class="maya-button">Proceed to Maya Payment</a>
+                </div>
+              </li>
+        
             </ul>
         
             <div class="form-row place-order">
-              <button type="submit" class="th-btn">Place order</button>
+              <button type="submit" class="th-btn" id="place-order-btn">Place order</button>
             </div>
           </div>
         </div>
@@ -799,337 +788,17 @@
     <script src="assets/js/app.min.js"></script>
     <script src="assets\js\cart.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let cart = JSON.parse(localStorage.getItem("cart")) || []; // Retrieve stored cart
-        updateCartUI(); // Load stored cart items on page load
     
-        document.querySelectorAll(".fa-cart-plus").forEach((button) => {
-            button.addEventListener("click", function (event) {
-                event.preventDefault();
-                
-                let productElement = this.closest(".th-product"); // Find closest product
-                let productName = productElement.querySelector(".product-title a").textContent;
-                let productImage = productElement.querySelector(".product-img img").src;
-                let productPrice = parseFloat(productElement.querySelector(".price").textContent.replace("₱", "").trim());
-    
-                // Check if the product is already in the cart
-                let existingItem = cart.find(item => item.name === productName);
-                if (existingItem) {
-                    existingItem.quantity++; // Increase quantity if exists
-                } else {
-                    cart.push({
-                        name: productName,
-                        image: productImage,
-                        price: productPrice,
-                        quantity: 1
-                    });
-                }
-    
-                localStorage.setItem("cart", JSON.stringify(cart)); // Save cart
-                updateCartUI(); // Update UI
-            });
-        });
-    
-        function updateCartUI() {
-            let cartContainer = document.querySelector(".woocommerce-mini-cart");
-            let subtotalContainer = document.querySelector(".woocommerce-mini-cart__total .woocommerce-Price-amount");
-            cartContainer.innerHTML = ""; // Clear existing items
-    
-            let subtotal = 0;
-            cart.forEach((item, index) => {
-                subtotal += item.price * item.quantity;
-                let cartItem = document.createElement("li");
-                cartItem.classList.add("woocommerce-mini-cart-item", "mini_cart_item");
-                cartItem.innerHTML = `
-                    <a href="#" class="remove remove_from_cart_button" data-index="${index}">
-                        <i class="far fa-times"></i>
-                    </a>
-                    <a href="#">
-                        <img src="${item.image}" alt="Cart Image" />
-                        ${item.name}
-                    </a>
-                    <span class="quantity">${item.quantity} × 
-                        <span class="woocommerce-Price-amount amount">
-                            <span class="woocommerce-Price-currencySymbol">₱</span>${item.price.toFixed(2)}
-                        </span>
-                    </span>
-                `;
-                cartContainer.appendChild(cartItem);
-            });
-    
-            subtotalContainer.innerHTML = `<span class="woocommerce-Price-currencySymbol">₱</span>${subtotal.toFixed(2)}`;
-    
-            // Add event listener for removing items
-            document.querySelectorAll(".remove_from_cart_button").forEach(button => {
-                button.addEventListener("click", function (event) {
-                    event.preventDefault();
-                    let index = this.getAttribute("data-index");
-                    cart.splice(index, 1);
-                    localStorage.setItem("cart", JSON.stringify(cart)); // Update storage
-                    updateCartUI(); // Update UI
-                });
-            });
-        }
-    });
-    
-  </script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let checkoutItems = JSON.parse(localStorage.getItem("checkoutItems")) || [];
-      let orderTableBody = document.querySelector(".cart_table tbody");
-      let subtotalContainer = document.getElementById("cart-subtotal");
-      let totalContainer = document.getElementById("checkout-total");
-  
-      let subtotal = 0;
-      orderTableBody.innerHTML = ""; // Clear table
-  
-      checkoutItems.forEach(item => {
-          let total = item.price * item.quantity;
-          subtotal += total;
-  
-          let row = document.createElement("tr");
-          row.innerHTML = `
-              <td><img src="${item.image}" width="50"></td>
-              <td>${item.name}</td>
-              <td>₱${item.price.toFixed(2)}</td>
-              <td>${item.quantity}</td>
-              <td>₱${total.toFixed(2)}</td>
-          `;
-          orderTableBody.appendChild(row);
-      });
-  
-      // Update totals
-      subtotalContainer.textContent = subtotal.toFixed(2);
-      totalContainer.textContent = `₱${subtotal.toFixed(2)}`;
-  });
-  
+    
   </script>
   <script src="assets/js/cart.js"></script>
-  <!-- <script>
-    document.getElementById("confirm-checkout-btn").addEventListener("click", function () {
-      if (this.classList.contains("confirmed")) {
-          this.textContent = "Confirm Checkout";
-          this.classList.remove("confirmed");
-      } else {
-          this.textContent = "Confirmed";
-          this.classList.add("confirmed");
-      }
-  });
-  
-  
-  
-  </script> -->
-
-  <!-- BILLING -->
-   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let billingCountrySelect = document.querySelector(".woocommerce-checkout .col-lg-6 .form-select");
-      let shippingCountrySelect = document.querySelector(".shipping_address .form-select");
-      let shipToDifferentCheckbox = document.getElementById("ship-to-different-address-checkbox");
-  
-      let shippingType = document.getElementById("shipping-type");
-      let shippingPriceEl = document.getElementById("shipping-price");
-      let checkoutTotalEl = document.getElementById("checkout-total");
-  
-      function getSelectedCountry() {
-          return shipToDifferentCheckbox.checked ? shippingCountrySelect.value : billingCountrySelect.value;
-      }
-  
-      function updateShipping() {
-          let subtotal = parseFloat(document.getElementById("cart-subtotal").textContent.replace(/,/g, '')) || 0;
-          let shippingPrice = 0;
-          let selectedCountry = getSelectedCountry();
-  
-          if (selectedCountry === "Philippines (PH)") {
-              shippingPrice = 39;
-              shippingType.textContent = "Local Shipping";
-          } else {
-              shippingPrice = 89;
-              shippingType.textContent = "International Shipping";
-          }
-  
-          shippingPriceEl.textContent = shippingPrice.toFixed(2);
-          checkoutTotalEl.textContent = `₱${(subtotal + shippingPrice).toFixed(2)}`;
-      }
-  
-      // Event Listeners
-      billingCountrySelect.addEventListener("change", updateShipping);
-      shippingCountrySelect.addEventListener("change", updateShipping);
-      shipToDifferentCheckbox.addEventListener("change", updateShipping);
-  
-      updateShipping(); // Run on page load
-  });
-  
-  
-   </script>
    <script type="module" src="assets\js\firebaseConfig.js"></script>
    <script type="module" src="assets\js\auth.js"></script>
-   <script type="module" src="assets\js\cart2.js"></script>
+   <script type="module" src="assets\js\cart.js"></script>
+   <script type="module" src="assets\js\checkout.js"></script>
    <script type="module" src="assets\js\orders.js"></script>
    <script type = "module" src = "assets\js\script.js"></script>
-<!-- MOP -->
-
-
-<!-- BILLING -->
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector(".woocommerce-checkout");
-
-    // Function to save form data
-    function saveFormData() {
-      const inputs = form.querySelectorAll("input, select, textarea");
-      inputs.forEach((input) => {
-        if (input.name) { // Ensure the input has a name
-          localStorage.setItem(input.name, input.value);
-        }
-      });
-    }
-
-    // Function to load saved form data
-    function loadFormData() {
-      const inputs = form.querySelectorAll("input, select, textarea");
-      inputs.forEach((input) => {
-        if (input.name && localStorage.getItem(input.name)) {
-          input.value = localStorage.getItem(input.name);
-        }
-      });
-    }
-
-    // Load data when the page loads
-    loadFormData();
-
-    // Save data on every input change
-    form.addEventListener("input", saveFormData);
-
-    // Optional: Clear storage when the form is submitted (if needed)
-    form.addEventListener("submit", function () {
-      localStorage.clear();
-    });
-  });
-</script>
-
-<!-- MOP -->
-
-<script>
-  document.getElementById("confirm-checkout-btn").addEventListener("click", function () {
-    // Get address values from billing section
-    let streetAddress = document.querySelector(".woocommerce-checkout input[placeholder='Street Address']").value;
-    let city = document.querySelector(".woocommerce-checkout input[placeholder='Town / City']").value;
-    let postcode = document.querySelector(".woocommerce-checkout input[placeholder='Postcode / Zip']").value;
-    
-    // Format the address
-    let fullAddress = `${streetAddress}, ${city}, ${postcode}`;
-
-    // Update the "Cash on Delivery" text
-    let codText = document.querySelector(".payment_box.payment_method_cod p");
-    if (streetAddress.trim() !== "") {
-      codText.textContent = `Delivery Address: ${fullAddress}`;
-    }
-  });
-</script>
-
-<script>
-  document.querySelector(".th-btn[type='submit']").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Reset all input fields in the checkout form
-    document.querySelectorAll(".woocommerce-checkout input, .woocommerce-checkout textarea").forEach(input => {
-      if (input.type === "checkbox" || input.type === "radio") {
-        input.checked = input.defaultChecked; // Reset to default checked state
-      } else {
-        input.value = ""; // Clear text fields
-      }
-    });
-
-    // Reset payment method to default (Cash on Delivery)
-    document.getElementById("payment_method_cod").checked = true;
-
-    // Reset the order summary table (if applicable)
-    let orderTable = document.querySelector(".order-summary-table"); // Adjust selector if needed
-    if (orderTable) {
-      orderTable.innerHTML = "<tr><td colspan='4'>Your cart is empty.</td></tr>"; // Display empty cart message
-    }
-
-    // Redirect to orders.html
-    setTimeout(() => {
-      window.location.href = "orders.html";
-    }, 1000); // Delay for 1 second to simulate processing
-  });
-</script>
-
-<script>
-  document.querySelector(".th-btn[type='submit']").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent form submission
-
-    let cartItems = [];
-    document.querySelectorAll(".cart_table tbody tr").forEach(row => {
-      let item = {
-        image: row.querySelector(".cart-col-image img") ? row.querySelector(".cart-col-image img").src : "",
-        name: row.querySelector(".cart-col-productname") ? row.querySelector(".cart-col-productname").innerText : "Unknown",
-        price: row.querySelector(".cart-col-price") ? row.querySelector(".cart-col-price").innerText : "₱0.00",
-        quantity: row.querySelector(".cart-col-quantity input") ? row.querySelector(".cart-col-quantity input").value : "1",
-        total: row.querySelector(".cart-col-total") ? row.querySelector(".cart-col-total").innerText : "₱0.00"
-      };
-      cartItems.push(item);
-    });
-
-    let orderDetails = {
-      cart: cartItems,
-      subtotal: document.getElementById("cart-subtotal").innerText,
-      shipping: document.getElementById("shipping-price").innerText,
-      total: document.getElementById("checkout-total").innerText,
-      paymentMethod: document.querySelector("input[name='payment_method']:checked").value
-    };
-
-    localStorage.setItem("orderDetails", JSON.stringify(orderDetails)); // Save order details
-
-    setTimeout(() => {
-      window.location.href = "orders.html"; // Redirect to orders page
-    }, 1000);
-  });
-</script>
-
-<!-- Your existing checkout form goes here -->
-
-<script>
-  document.getElementById("confirm-checkout-btn").addEventListener("click", function() {
-    // Gather data from the billing form
-    let billingData = {
-      firstName: document.querySelector("[name='billing_first_name']").value,
-      lastName: document.querySelector("[name='billing_last_name']").value,
-      company: document.querySelector("[name='billing_company']").value,
-      street: document.querySelector("[name='billing_street']").value,
-      apartment: document.querySelector("[name='billing_apartment']").value,
-      city: document.querySelector("[name='billing_city']").value,
-      state: document.querySelector("[name='billing_state']").value,
-      postcode: document.querySelector("[name='billing_postcode']").value,
-      email: document.querySelector("[name='billing_email']").value,
-      phone: document.querySelector("[name='billing_phone']").value,
-    };
-
-    // Get the selected payment method
-    let paymentMethod = document.querySelector("input[name='payment_method']:checked").value;
-
-    // Get cart items (this would typically come from your shopping cart logic, but we're simulating it here)
-    let cartItems = [
-      { image: 'image1.jpg', name: 'Product 1', price: '₱100', quantity: 2, total: '₱200' },
-      { image: 'image2.jpg', name: 'Product 2', price: '₱150', quantity: 1, total: '₱150' },
-    ];
-
-    // Save order data in localStorage
-    localStorage.setItem('orderDetails', JSON.stringify({
-      billingData: billingData,
-      paymentMethod: paymentMethod,
-      cartItems: cartItems
-    }));
-
-    // Redirect to orders page
-    window.location.href = "orders.html";
-  });
-</script>
-
 
   </body>
 </html>
