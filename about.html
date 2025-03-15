@@ -850,90 +850,16 @@
         ></path>
       </svg>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let cart = JSON.parse(localStorage.getItem("cart")) || []; // Retrieve stored cart
-        updateCartUI(); // Load stored cart items on page load
-    
-        document.querySelectorAll(".fa-cart-plus").forEach((button) => {
-            button.addEventListener("click", function (event) {
-                event.preventDefault();
-                
-                let productElement = this.closest(".th-product"); // Find closest product
-                let productName = productElement.querySelector(".product-title a").textContent;
-                let productImage = productElement.querySelector(".product-img img").src;
-                let productPrice = parseFloat(productElement.querySelector(".price").textContent.replace("₱", "").trim());
-    
-                // Check if the product is already in the cart
-                let existingItem = cart.find(item => item.name === productName);
-                if (existingItem) {
-                    existingItem.quantity++; // Increase quantity if exists
-                } else {
-                    cart.push({
-                        name: productName,
-                        image: productImage,
-                        price: productPrice,
-                        quantity: 1
-                    });
-                }
-    
-                localStorage.setItem("cart", JSON.stringify(cart)); // Save cart
-                updateCartUI(); // Update UI
-            });
-        });
-    
-        function updateCartUI() {
-            let cartContainer = document.querySelector(".woocommerce-mini-cart");
-            let subtotalContainer = document.querySelector(".woocommerce-mini-cart__total .woocommerce-Price-amount");
-            cartContainer.innerHTML = ""; // Clear existing items
-    
-            let subtotal = 0;
-            cart.forEach((item, index) => {
-                subtotal += item.price * item.quantity;
-                let cartItem = document.createElement("li");
-                cartItem.classList.add("woocommerce-mini-cart-item", "mini_cart_item");
-                cartItem.innerHTML = `
-                    <a href="#" class="remove remove_from_cart_button" data-index="${index}">
-                        <i class="far fa-times"></i>
-                    </a>
-                    <a href="#">
-                        <img src="${item.image}" alt="Cart Image" />
-                        ${item.name}
-                    </a>
-                    <span class="quantity">${item.quantity} × 
-                        <span class="woocommerce-Price-amount amount">
-                            <span class="woocommerce-Price-currencySymbol">₱</span>${item.price.toFixed(2)}
-                        </span>
-                    </span>
-                `;
-                cartContainer.appendChild(cartItem);
-            });
-    
-            subtotalContainer.innerHTML = `<span class="woocommerce-Price-currencySymbol">₱</span>${subtotal.toFixed(2)}`;
-    
-            // Add event listener for removing items
-            document.querySelectorAll(".remove_from_cart_button").forEach(button => {
-                button.addEventListener("click", function (event) {
-                    event.preventDefault();
-                    let index = this.getAttribute("data-index");
-                    cart.splice(index, 1);
-                    localStorage.setItem("cart", JSON.stringify(cart)); // Update storage
-                    updateCartUI(); // Update UI
-                });
-            });
-        }
-    });
-    
-  </script>
+    <script type = "module" src = "assets\js\script.js"></script>
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets/js/app.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script type = "module" src = "assets\js\script.js"></script>
-
+    <script src="assets/js/.js"></script>
+    
     <script type="module" src="assets\js\firebaseConfig.js"></script>
-<script type="module" src="assets\js\auth.js"></script>
-<script type="module" src="assets\js\cart2.js"></script>
-<script type="module" src="assets\js\orders.js"></script>
+    <script type="module" src="assets\js\auth.js"></script>
+    <script type="module" src="assets\js\cart.js"></script>
+    <script type="module" src="assets\js\orders.js"></script>
 
   </body>
 </html>
